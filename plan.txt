@@ -1,0 +1,14 @@
+core - Weather Dashboard lets user search for
+the weather in a specific city by using an api
+from Weatherbit.io and openuv.io. Each search can
+be called back with local storage and searched again.
+When city is searched the city shows up and
+current date shows up along with temp, wind, humidity
+and UV index with color coded intensity. The next 
+following dates of the current date appears with
+users specific search.
+
+first - get a call from both api's 
+second - get info to appear on current date and city name
+third - get following next 5 days to appear
+fourth - get local storage to appear in recent searches
