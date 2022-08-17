@@ -1,7 +1,19 @@
 /* Universal */
-
+:root {
+  --blue: #034efc;
+  --darkblue: #000dc2;
+  --lightblue: #38c0ff;
+}
 /* Element Selectors */
 
 /* Class Selectors */
-
+.bg-blue {
+  background-color: var(--blue);
+}
+.bg-darkblue {
+  background-color: var(--darkblue);
+}
+.bg-lightblue {
+  background-color: var(--lightblue);
+}
 /* Media Queries */

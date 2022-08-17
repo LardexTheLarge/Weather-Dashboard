@@ -4,7 +4,102 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template File</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Weather Dashboard</title>
   </head>
-  <body></body>
+  <body class="bg-blue">
+    <!-- header -->
+    <header>
+      <nav class="navbar bg-darkblue">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1 text-white">Weather Dashboard</span>
+        </div>
+      </nav>
+    </header>
+    <!-- Info section -->
+    <main>
+      <!-- search bar and localy stored past searches -->
+      <section class="container my-5">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="exampleDataList" class="form-label text-white"
+              >Search for City:</label
+            >
+            <input
+              class="form-control"
+              list="datalistOptions"
+              id="exampleDataList"
+              placeholder="Type to search..."
+            />
+            <datalist id="datalistOptions">
+              <option value="San Francisco"></option>
+              <option value="New York"></option>
+              <option value="Seattle"></option>
+              <option value="Los Angeles"></option>
+              <option value="Chicago"></option>
+            </datalist>
+          </div>
+
+          <!-- todays weather and info -->
+          <div class="card col-md-6 my-2 bg-lightblue" style="width: 18rem">
+            <div class="card-body">
+              <h5 class="card-title">current date and state name</h5>
+              <p class="card-text">current day info</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Weather next five days -->
+      <section class="container my-5">
+        <div class="row">
+          <div class="col w-25">
+            <div class="card bg-lightblue">
+              <div class="card-body">
+                <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">That days info</p>
+              </div>
+            </div>
+          </div>
+          <div class="col w-25">
+            <div class="card bg-lightblue">
+              <div class="card-body">
+                <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">That days info</p>
+              </div>
+            </div>
+          </div>
+          <div class="col w-25">
+            <div class="card bg-lightblue">
+              <div class="card-body">
+                <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">That days info</p>
+              </div>
+            </div>
+          </div>
+          <div class="col w-25">
+            <div class="card bg-lightblue">
+              <div class="card-body">
+                <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">That days info</p>
+              </div>
+            </div>
+          </div>
+          <div class="col w-25">
+            <div class="card bg-lightblue">
+              <div class="card-body">
+                <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">That days info</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
