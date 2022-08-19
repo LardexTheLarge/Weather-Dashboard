@@ -8,6 +8,7 @@ var cityName = $("#currentDay");
 var searchBtn = $("#search-btn");
 var searchInput = $("#search-input");
 var uvIndex = $("#uv-index");
+var dataList = $("#datalistOptions");
 
 //Functions
 //this function calls all three api's and displays them to current and forecast
@@ -108,8 +109,51 @@ function getWeatherApi(location) {
     });
 }
 
+//saves the city user inputs into the search area
+function saveCity(input) {
+  //gets city storage key from local storage
+  var cityStorage = localStorage.getItem("cityStorage");
+  //if city storage is empty turn city storage into an array
+  //else turn the JSON into a object
+  if (cityStorage === null) cityStorage = [];
+  else {
+    cityStorage = JSON.parse(cityStorage);
+  }
+  //moves the new input to the front of the array
+  cityStorage.unshift(input);
+  //new search added is city storage turned into a string
+  var newSearchAdded = JSON.stringify(cityStorage);
+  //set the new search into the city storage key
+  localStorage.setItem("cityStorage", newSearchAdded);
+}
+
+//displays the search into the recent searches
+function displayCity() {
+  //gets the city storage key from local storage
+  var cityStorage = localStorage.getItem("cityStorage");
+  //turns the city storage into an object
+  cityStorage = JSON.parse(cityStorage);
+
+  //the .empty function empty's the data list and brings the recent search to the top
+  dataList.empty();
+
+  //if the city storage is NOT empty loop through the next if statement
+  if (cityStorage != null) {
+    for (var i = 0; i < 5; i++) {
+      //if city storage index is NOT empty create the option element and put it in the datalist
+      if (cityStorage[i] != null) {
+        var option = document.createElement("option");
+        option.value = cityStorage[i];
+        dataList.append(option);
+      }
+    }
+  }
+}
+
 //Event Listeners
 searchBtn.on("click", function () {
   var input = searchInput.val().trim();
   getWeatherApi(input);
+  saveCity(input);
+  displayCity(input);
 });
