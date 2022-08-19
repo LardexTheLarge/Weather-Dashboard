@@ -10,5 +10,5 @@ users specific search.
 
 first - get a call from both api's - done
 second - get info to appear on current date and city name - done
-third - get following next 5 days to appear - in progress
+third - get following next 5 days to appear - done
 fourth - get local storage to appear in recent searches - done
