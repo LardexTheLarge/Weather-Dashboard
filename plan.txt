@@ -8,7 +8,7 @@ and UV index with color coded intensity. The next
 following dates of the current date appears with
 users specific search.
 
-first - get a call from both api's 
-second - get info to appear on current date and city name
-third - get following next 5 days to appear
-fourth - get local storage to appear in recent searches
+first - get a call from both api's - done
+second - get info to appear on current date and city name - done
+third - get following next 5 days to appear - in progress
+fourth - get local storage to appear in recent searches - done
