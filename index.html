@@ -22,19 +22,32 @@
     </header>
     <!-- Info section -->
     <main>
-      <!-- search bar and localy stored past searches -->
+      <!-- search bar and locally stored past searches -->
       <section class="container my-5">
         <div class="row">
           <div class="col-md-6">
             <label for="exampleDataList" class="form-label text-white"
               >Search for City:</label
             >
-            <input
-              class="form-control"
-              list="datalistOptions"
-              id="exampleDataList"
-              placeholder="Type to search..."
-            />
+            <div class="input-group mb-3">
+              <input
+                id="search-input"
+                type="text"
+                list="datalistOptions"
+                class="form-control"
+                placeholder="Type to search..."
+                aria-label="Users search"
+                aria-describedby="search-btn"
+              />
+              <button
+                class="btn btn-outline-primary bg-darkblue"
+                type="button"
+                id="search-btn"
+              >
+                Search
+              </button>
+            </div>
+
             <datalist id="datalistOptions">
               <option value="San Francisco"></option>
               <option value="New York"></option>
@@ -51,7 +64,7 @@
               <p class="card-text">Temp:</p>
               <p class="card-text">Wind:</p>
               <p class="card-text">Humidity:</p>
-              <p class="card-text">UV Index:</p>
+              <p id="uv-index" class="card-text">UV Index:</p>
             </div>
           </div>
         </div>
@@ -61,8 +74,9 @@
         <div class="row">
           <div class="col w-25">
             <div class="card bg-lightblue">
-              <div class="card-body">
+              <div id="forecast" class="card-body">
                 <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">Visual:</p>
                 <p class="card-text">Temp:</p>
                 <p class="card-text">Wind:</p>
                 <p class="card-text">Humidity:</p>
@@ -71,8 +85,9 @@
           </div>
           <div class="col w-25">
             <div class="card bg-lightblue">
-              <div class="card-body">
+              <div id="forecast" class="card-body">
                 <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">Visual:</p>
                 <p class="card-text">Temp:</p>
                 <p class="card-text">Wind:</p>
                 <p class="card-text">Humidity:</p>
@@ -81,8 +96,9 @@
           </div>
           <div class="col w-25">
             <div class="card bg-lightblue">
-              <div class="card-body">
+              <div id="forecast" class="card-body">
                 <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">Visual:</p>
                 <p class="card-text">Temp:</p>
                 <p class="card-text">Wind:</p>
                 <p class="card-text">Humidity:</p>
@@ -91,8 +107,9 @@
           </div>
           <div class="col w-25">
             <div class="card bg-lightblue">
-              <div class="card-body">
+              <div id="forecast" class="card-body">
                 <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">Visual:</p>
                 <p class="card-text">Temp:</p>
                 <p class="card-text">Wind:</p>
                 <p class="card-text">Humidity:</p>
@@ -101,8 +118,9 @@
           </div>
           <div class="col w-25">
             <div class="card bg-lightblue">
-              <div class="card-body">
+              <div id="forecast" class="card-body">
                 <h5 class="card-title">Following 5 days dates</h5>
+                <p class="card-text">Visual:</p>
                 <p class="card-text">Temp:</p>
                 <p class="card-text">Wind:</p>
                 <p class="card-text">Humidity:</p>

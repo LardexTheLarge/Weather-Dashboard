@@ -16,4 +16,14 @@
 .bg-lightblue {
   background-color: var(--lightblue);
 }
+/* index condition */
+.favorable {
+  background-color: green;
+}
+.moderate {
+  background-color: yellow;
+}
+.severe {
+  background-color: red;
+}
 /* Media Queries */
