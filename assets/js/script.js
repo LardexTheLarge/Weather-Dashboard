@@ -3,8 +3,8 @@ var API_KEY = "1d41d88a7537cedbb3f07e92b34b8e94";
 var APIKEY = "704f9597167e48ceb527d58b08526b5f";
 var now = new Date().toLocaleDateString();
 var weatherItem = $("p");
-var forecastSlot = $("#forecast");
 var cityName = $("#currentDay");
+var cityIcon = $("#current-icon");
 var searchBtn = $("#search-btn");
 var searchInput = $("#search-input");
 var uvIndex = $("#uv-index");
@@ -25,8 +25,6 @@ function getWeatherApi(location) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      console.log(data.name);
       var lon = data.coord.lon;
       var lat = data.coord.lat;
 
@@ -44,10 +42,13 @@ function getWeatherApi(location) {
           return response.json();
         })
         .then(function (data) {
-          console.log(data.data[0]);
           //title of current day
-          cityName.text(
-            data.data[0].city_name + " " + now + " " + data.data[0].weather.icon
+          cityName.text(data.data[0].city_name + " " + now);
+          cityIcon.attr(
+            "src",
+            "https://www.weatherbit.io/static/img/icons/" +
+              data.data[0].weather.icon +
+              ".png"
           );
           //array of api data aligning with current day info
           var weatherArray = [
@@ -88,22 +89,19 @@ function getWeatherApi(location) {
           return response.json();
         })
         .then(function (data) {
-          console.log(data.data);
-          // console.log(data.data[1]);
-          // console.log(data.data[2]);
-          // console.log(data.data[3]);
-          // console.log(data.data[4]);
-          // console.log(data.data[5]);
-
-          for (var i = 1; i <= 5; i++) {
-            console.log(forecastArray);
-            var forecastArray = [
-              `Visual: ${data.data[i].weather.icon} `,
-              `Temp: ${data.data[i].temp} F`,
-              `Wind: ${data.data[i].wind_spd.toFixed(1)} MPH`,
-              `Humidity: ${data.data[i].rh} %`,
-            ];
-            forecastSlot.eq(i).text(forecastArray);
+          //loops through each forecast card element displays api keys appropriately
+          for (var i = 1; i <= 6; i++) {
+            //this line goes to title-i and displays date time key
+            $("#title-" + i).text(data.data[i].datetime);
+            $("#vis-" + i).attr(
+              "src",
+              "https://www.weatherbit.io/static/img/icons/" +
+                data.data[i].weather.icon +
+                ".png"
+            );
+            $("#tmp-" + i).text("Temp: " + data.data[i].temp + " F");
+            $("#wind-" + i).text("Wind: " + data.data[i].wind_spd + " MPH");
+            $("#hum-" + i).text("Humidity: " + data.data[i].rh + " %");
           }
         });
     });
